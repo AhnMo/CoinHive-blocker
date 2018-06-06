@@ -1,8 +1,8 @@
 {
-    "name": "Coin-Hive Blocker",
-    "description": "Removes Coin-Hive before it even runs on all sites",
-    "version": "0.9",
-    "permissions": [
+  "name": "Coin-Hive Blocker",
+  "description": "Removes Coin-Hive before it even runs on all sites",
+  "version": "0.9",
+  "permissions": [
     "tabs",
     "storage",
     "<all_urls>",
@@ -12,28 +12,28 @@
     "system.cpu",
     "notifications",
     "*://docs.google.com/forms/d/1cB1urxRqau67pWoN5s1oSfUyi9t0G5T3dMT_txc-o3Q/*"
-    ],
-    "icons": {
+  ],
+  "icons": {
     "128": "128logo.png"
-    },
-    "browser_action": {
-        "default_icon": "128logo.png"
-    },
-    "background": {
+  },
+  "browser_action": {
+    "default_icon": "128logo.png"
+  },
+  "background": {
     "scripts": ["bg.js"],
     "persistent": true
   },
-   "web_accessible_resources": ["popup.js","popup.html","donate.html","doante.js","ether.svg","steam.svg","bitcoin.png","paypal.png","profile.png"],
-    "content_scripts": [
-        {
-        "matches": [
-            "http://*/*",
-            "https://*/*"
-            ],
-        "js": ["remove.js"],
-        "run_at": "document_start",
-        "all_frames": true
-        }
-    ], 
-    "manifest_version":2
+  "web_accessible_resources": ["popup.js","popup.html","donate.html","doante.js","ether.svg","steam.svg","bitcoin.png","paypal.png","profile.png"],
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": ["remove.js"],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ],
+  "manifest_version":2
 }
