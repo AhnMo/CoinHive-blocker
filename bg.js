@@ -49,6 +49,7 @@ function CpuUsage() {
                     break;
                   }else if(i == (ignore.length - 1)){
                     chrome.notifications.create('HIGHCPU', opt);
+                    chrome.tabs.sendMessage(tabs.tabId, {message: "AHNMO_DETECTED"}); // XXX: THIS
                     chrome.notifications.onClicked.addListener(function(res){
                       if(res == "HIGHCPU"){
                         chrome.notifications.clear('HIGHCPU')
@@ -207,7 +208,7 @@ function block(blacklist) {
             });
           }
         });
-        chrome.tabs.sendMessage(details.tabId, {message: "AHNMO_DETECTED"}); // XXX: THIS
+        chrome.tabs.sendMessage(block.tabId, {message: "AHNMO_DETECTED"}); // XXX: THIS
         return {cancel: true};
       }
       chrome.runtime.onMessage.addListener(
